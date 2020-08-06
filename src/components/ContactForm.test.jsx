@@ -24,6 +24,6 @@ test('Adds new user when form is filled out and submitted', async () => {
     //click on the submit button
     await act(async() => fireEvent.click(submitBtn)) 
     //make our assertions
-    expect(screen.getByText(/roy/i)).toBeInTheDocument()
+    expect(screen.getByText(/royer/i)).toBeInTheDocument()
 
 })
