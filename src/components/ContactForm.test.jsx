@@ -20,7 +20,7 @@ test('Adds new user when form is filled out and submitted', () => {
     fireEvent.change(emailInput, { target: {value: 'RoyerAAdames@gmail.com'}})
     fireEvent.change(messageInput, {target: { value: 'Royer was here.'}})
     //query for the submit button
-
+    
     //click on the submit button
 
     //make our assertions
