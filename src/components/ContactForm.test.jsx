@@ -20,9 +20,10 @@ test('Adds new user when form is filled out and submitted', () => {
     fireEvent.change(emailInput, { target: {value: 'RoyerAAdames@gmail.com'}})
     fireEvent.change(messageInput, {target: { value: 'Royer was here.'}})
     //query for the submit button
-    
+    const submitBtn = screen.getByRole('button', {type:/submit/i})
     //click on the submit button
-
+    // fireEvent.click(submitBtn) ?
     //make our assertions
+    // expect(screen.getByText(/roy/i)).toBeInTheDocument()
 
 })
