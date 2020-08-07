@@ -1,15 +1,27 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
-
+import axios from 'axios'
 const ContactForm = () => {
   const [data, setData] = useState();
   const { register, errors, handleSubmit } = useForm({
     mode: "onBlur",
   });
+  const [postedData, setPostedData] = useState()
   const onSubmit = (data) => {
     setData(data);
   };
-
+  useEffect(()=>{
+    //don't do anything of the 1 render, and on the next changes to data then post the data
+    if(data === (undefined)){
+      
+    } else{
+      axios.post( 'https://reqres.in/api/users', data)
+      .then(success => {
+        setPostedData(success.data)
+        debugger
+      })
+    }
+  }, [data])
   return (
     <div className="App">
       <form onSubmit={handleSubmit(onSubmit)}>
